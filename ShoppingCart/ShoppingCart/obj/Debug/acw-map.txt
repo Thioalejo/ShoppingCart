@@ -1,0 +1,4 @@
+ShoppingCart.MainActivity, ShoppingCart;md52baa2bbf34418d729d8a57a3e1892896.MainActivity
+ShoppingCart.MainActivity, ShoppingCart, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52baa2bbf34418d729d8a57a3e1892896.MainActivity
+ShoppingCart.MainActivity;md52baa2bbf34418d729d8a57a3e1892896.MainActivity
+shoppingcart.MainActivity;md52baa2bbf34418d729d8a57a3e1892896.MainActivity
