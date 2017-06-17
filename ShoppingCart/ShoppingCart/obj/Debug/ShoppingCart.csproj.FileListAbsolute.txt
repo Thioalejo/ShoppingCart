@@ -13,3 +13,17 @@ c:\users\alejo\documents\visual studio 2017\Projects\ShoppingCart\ShoppingCart\o
 c:\users\alejo\documents\visual studio 2017\Projects\ShoppingCart\ShoppingCart\obj\Debug\uploadflags.txt
 c:\users\alejo\documents\visual studio 2017\Projects\ShoppingCart\ShoppingCart\bin\Debug\ShoppingCart.dll.mdb
 c:\users\alejo\documents\visual studio 2017\Projects\ShoppingCart\ShoppingCart\obj\Debug\android\assets\ShoppingCart.dll.mdb
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\bin\Debug\ShoppingCart.dll
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\bin\Debug\ShoppingCart.pdb
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\bin\Debug\ShoppingCart.ShoppingCart.apk
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\bin\Debug\ShoppingCart.ShoppingCart-Signed.apk
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\ShoppingCart.dll
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\ShoppingCart.pdb
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\bin\ShoppingCart.ShoppingCart.apk
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\res\layout\main.xml
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\res\values\strings.xml
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\res\drawable\icon.png
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\R.cs.flag
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\uploadflags.txt
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\bin\Debug\ShoppingCart.dll.mdb
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\ShoppingCart.dll.mdb
