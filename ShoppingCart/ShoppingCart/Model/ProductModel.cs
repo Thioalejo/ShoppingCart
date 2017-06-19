@@ -16,7 +16,7 @@ namespace ShoppingCart.Model
 {
    public class ProductModel:INotifyPropertyChanged
     {
-
+       
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string NameProperty = "")

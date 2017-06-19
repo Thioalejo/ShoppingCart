@@ -2,7 +2,7 @@
 <xs:schema xmlns:android="http://schemas.android.com/apk/res/android" attributeFormDefault="qualified" targetNamespace="http://schemas.android.com/apk/res/android" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v23</xs:documentation>
-    <xs:documentation>17/06/2017 8:49:07 a.m.</xs:documentation>
+    <xs:documentation>19/06/2017 4:47:02 p.m.</xs:documentation>
   </xs:annotation>
   <xs:attribute name="accessibilityLiveRegion">
     <xs:annotation>
@@ -16716,6 +16716,22 @@
           <xs:restriction base="xs:string">
             <xs:enumeration value="@+id/" />
             <xs:enumeration value="@+id/checkBox1" />
+            <xs:enumeration value="@id/btnEliminar" />
+            <xs:enumeration value="@id/btnGuardar" />
+            <xs:enumeration value="@id/btnLimpiar" />
+            <xs:enumeration value="@id/btnModificar" />
+            <xs:enumeration value="@id/btnMostrar" />
+            <xs:enumeration value="@id/EditTextCdBarras" />
+            <xs:enumeration value="@id/EditTextNombreProducto" />
+            <xs:enumeration value="@id/EditTextPrecioProducto" />
+            <xs:enumeration value="@id/LVProducts" />
+            <xs:enumeration value="@id/scrollView1" />
+            <xs:enumeration value="@id/textpro" />
+            <xs:enumeration value="@id/textViewIdProducto" />
+            <xs:enumeration value="@id/TextViewMostrarIDProducto" />
+            <xs:enumeration value="@id/textViewNameProduct" />
+            <xs:enumeration value="@id/textViewTitleCdBarras" />
+            <xs:enumeration value="@id/textViewTitlePrecioProducto" />
             <xs:enumeration value="@android:id/accessibilityActionContextClick" />
             <xs:enumeration value="@android:id/accessibilityActionScrollDown" />
             <xs:enumeration value="@android:id/accessibilityActionScrollLeft" />

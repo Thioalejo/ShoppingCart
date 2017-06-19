@@ -27,3 +27,4 @@ C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\R.c
 C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\uploadflags.txt
 C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\bin\Debug\ShoppingCart.dll.mdb
 C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\ShoppingCart.dll.mdb
+C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\ShoppingCart.csprojResolveAssemblyReference.cache
