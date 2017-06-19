@@ -28,27 +28,26 @@ namespace ShoppingCart.ViewModel
         //esto podria ser un servicio en azure o para consumir servicio rest, en este caso seria local
         ProductService servicio = new ProductService();
         ProductModel modelo;
-        
+
+
 
         
-
         public ProductViewModel()
         {
             Products = servicio.Consultar();
-           // ModificarCommand = new CommandID(async()=>await Modificar(),()=>!IsBusy);
         }
 
         //permite que cuando de clic a un boton o tabla o cualquier evento en una vista se ejecute aqui en el viewmodel
 
          
 
-        private void Guardar()
+        public void Guardar()
         {
             IsBusy = true;
             Guid IdProductUni = Guid.NewGuid();
             modelo = new ProductModel()
             {
-                Id = Convert.ToInt32(IdProductUni),
+                Id = IdProductUni.ToString(),
                 Name = Name,
                 CdBarras = CdBarras,
                 Price = Price
@@ -59,7 +58,7 @@ namespace ShoppingCart.ViewModel
         }
 
 
-        private void Modificar()
+        public void Modificar()
         {
             IsBusy = true;
             ///Guid IdProductUni = Guid.NewGuid();
@@ -76,7 +75,7 @@ namespace ShoppingCart.ViewModel
         }
 
 
-        private void Eliminar()
+        public void Eliminar()
         {
             IsBusy = true;
             Guid IdProductUni = Guid.NewGuid();
@@ -92,9 +91,9 @@ namespace ShoppingCart.ViewModel
             IsBusy = false;
         }
 
-        private void Limpiar()
+        public void Limpiar()
         {
-            //Id = ;
+            Id = "";
             Name = "";
             CdBarras = "";
             Price = 0;

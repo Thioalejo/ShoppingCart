@@ -26,19 +26,22 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/TextViewMostrarIDProducto" />
+                android:id="@+id/TextViewMostrarIDProducto"
+                android:hint="Aquí cargara ID"/>
             <TextView
                 android:text="Nombre producto:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textViewNameProduct" />
+                android:id="@+id/textViewNameProduct"
+                />
             <EditText
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/EditTextNombreProducto" />
+                android:id="@+id/EditTextNombreProducto"
+                android:hint="Ingrese nombre"/>
             <TextView
                 android:text="Codigo de barras:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -50,7 +53,8 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/EditTextCdBarras" />
+                android:id="@+id/EditTextCdBarras"
+                android:hint="Ingrese codigo del producto"/>
             <TextView
                 android:text="Precio producto:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -63,7 +67,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/EditTextPrecioProducto"
-                android:inputType="numberDecimal"/>
+                android:inputType="numberDecimal"
+                android:hint="Ingrese Valor"/>
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_height="58.0dp">

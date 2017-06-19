@@ -48,7 +48,7 @@ namespace ShoppingCart.Service
         }
 
 
-        public void Eliminar(int idProduct)
+        public void Eliminar(string idProduct)
         {
             ProductModel modelo = products.FirstOrDefault(p => p.Id == idProduct);
             products.Remove(modelo);

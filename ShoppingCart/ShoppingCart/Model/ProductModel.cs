@@ -16,8 +16,7 @@ namespace ShoppingCart.Model
 {
    public class ProductModel:INotifyPropertyChanged
     {
-       
-
+    
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string NameProperty = "")
         {
@@ -35,9 +34,9 @@ namespace ShoppingCart.Model
         }
 
 
-        private int id;
+        private string id;
 
-        public int Id
+        public string Id
         {
             get { return id; }
             set { id = value;
