@@ -19,7 +19,7 @@ namespace ShoppingCart
         //recordar que no se debe conectar directamente con el model, para eso se usa el view model que hace este proceso
         // por tanto yo desde la vista me comunico con el viewmodel no el modelo y el view model hace el mapeo de datos
         ProductViewModel ConectaConModelo = new ProductViewModel();
-
+        string ProductoCompleto;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -45,7 +45,7 @@ namespace ShoppingCart
             var btnModificar = FindViewById<Button>(Resource.Id.btnModificar);
             btnModificar.Click += BtnModificar_Click;
 
-            
+            datos = new List<string>();
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
@@ -121,6 +121,7 @@ namespace ShoppingCart
                 ConectaConModelo.Price = Convert.ToDecimal(TxtPrice.Text);
 
                 ConectaConModelo.Guardar();
+                ProductoCompleto = "Producto: " + ConectaConModelo.Name + " Precio: " + ConectaConModelo.Price;
                 //para crear lista con productos
                 ListView();
             }
@@ -157,8 +158,8 @@ namespace ShoppingCart
 
            
            
-            datos = new List<string>();
-            string ProductoCompleto = "Producto: " + ConectaConModelo.Name + " Precio: " + ConectaConModelo.Price;
+
+
             datos.Add(ProductoCompleto);
 
             //lo que va a mostrar la vista listview
