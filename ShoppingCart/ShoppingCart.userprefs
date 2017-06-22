@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{937A2FAC-BF88-4F21-ABA4-4EBDB6DA5B3C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ShoppingCart/MainActivity.cs">
+    <Files>
+      <File FileName="ShoppingCart/MainActivity.cs" Line="164" Column="13" />
+      <File FileName="ShoppingCart/Apoyo.cs" Line="8" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/MainActivity.cs" relfile="ShoppingCart/MainActivity.cs" line="35" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.ShoppingCart PreferredExecutionTarget="Android.G7T7N16C30006880" />
+</Properties>

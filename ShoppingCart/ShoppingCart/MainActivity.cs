@@ -6,6 +6,8 @@ using ShoppingCart.Service;
 using ShoppingCart.ViewModel;
 using System;
 using Android.Content.PM;
+using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace ShoppingCart
 {
@@ -13,7 +15,10 @@ namespace ShoppingCart
     public class MainActivity : Activity
     {
         private List<string> datos;
-        
+        TextView TxtID;
+        TextView TxtName;
+        EditText TxtCdBarras;
+        TextView TxtPrice;
         //esto podria ser un servicio en azure o para consumir servicio rest, en este caso seria local
         ProductService servicio = new ProductService();
         //recordar que no se debe conectar directamente con el model, para eso se usa el view model que hace este proceso
@@ -26,7 +31,7 @@ namespace ShoppingCart
             base.OnCreate(bundle);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
-
+            //ConsumirServicio();
             BotonesYEventos();
 
         }
@@ -50,12 +55,12 @@ namespace ShoppingCart
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            //var TxtID = FindViewById<TextView>(Resource.Id.btnModificar);
+            // TxtID = FindViewById<TextView>(Resource.Id.btnModificar);
 
-            //var TxtID = FindViewById<TextView>(Resource.Id.EditTextViewMostrarIDProducto);
-            var TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-            var TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-            var TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
+            // TxtID = FindViewById<TextView>(Resource.Id.EditTextViewMostrarIDProducto);
+             TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
+             TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
+             TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
 
 
             ConectaConModelo.Name = TxtName.Text;
@@ -68,12 +73,12 @@ namespace ShoppingCart
 
         private void BtnEliminar_Click(object sender, System.EventArgs e)
         {
-            var TxtID = FindViewById<TextView>(Resource.Id.btnEliminar);
+            TxtID = FindViewById<TextView>(Resource.Id.btnEliminar);
             servicio.Eliminar(ConectaConModelo.Id);
             //var TxtID = FindViewById<TextView>(Resource.Id.EditTextViewMostrarIDProducto);
-            var TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-            var TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-            var TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
+            TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
+            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
+            TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
 
 
             ConectaConModelo.Id = "";
@@ -89,10 +94,11 @@ namespace ShoppingCart
 
         private void BtnLimpiar_Click(object sender, System.EventArgs e)
         {
-            var TxtID = FindViewById<TextView>(Resource.Id.TextViewMostrarIDProducto);
-            var TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-            var TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-            var TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
+            ConsumirServicio();
+            TxtID = FindViewById<TextView>(Resource.Id.TextViewMostrarIDProducto);
+            TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
+            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
+            TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
 
             TxtID.Text = "";
             TxtName.Text = "";
@@ -102,10 +108,10 @@ namespace ShoppingCart
 
         private void BtnGuardar_Click(object sender, System.EventArgs e)
         {
-            //var TxtID = FindViewById<TextView>(Resource.Id.TextViewMostrarIDProducto);
-            var TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-            var TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-            var TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
+            //TxtID = FindViewById<TextView>(Resource.Id.TextViewMostrarIDProducto);
+            TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
+            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
+            TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
 
             //ConectaConModelo.Id = TxtID.Text;
             if(TxtName.Text == "" || TxtCdBarras.Text == "" || TxtPrice.Text == "")
@@ -121,7 +127,12 @@ namespace ShoppingCart
                 ConectaConModelo.Price = Convert.ToDecimal(TxtPrice.Text);
 
                 ConectaConModelo.Guardar();
-                ProductoCompleto = "Producto: " + ConectaConModelo.Name + " Precio: " + ConectaConModelo.Price;
+
+
+                //puede ir en otro metodo aparte.
+
+
+                ProductoCompleto = "Producto: " + ConectaConModelo.Name + " Precio: $ " + ConectaConModelo.Price;
                 //para crear lista con productos
                 ListView();
             }
@@ -140,27 +151,43 @@ namespace ShoppingCart
             
         }
 
+        Apoyo apoyoObjeto;
+        public async void ConsumirServicio()
+        {
+            string url = "http://plataforma.promexico.gob.mx/sys/gateway.aspx?UID=f2ea359b-a03d-456b-a01a-0f8afab41344";
+            HttpClient httpClient = new HttpClient();
+
+            //descargar json y deseraliacion y mostrar en el lisview
+            string jsonResultado = await httpClient.GetStringAsync(url);
+
+            apoyoObjeto = JsonConvert.DeserializeObject<Apoyo>(jsonResultado);
+
+
+            //ListView();
+        }
         private void Lista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var TxtID = FindViewById<TextView>(Resource.Id.TextViewMostrarIDProducto);
-            var TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-            var TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-            var TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
+            TxtID = FindViewById<TextView>(Resource.Id.TextViewMostrarIDProducto);
+            TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
+            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
+            TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
+
 
             TxtID.Text = ConectaConModelo.Id;
             TxtName.Text = ConectaConModelo.Name;
             TxtCdBarras.Text = ConectaConModelo.CdBarras;
             TxtPrice.Text = Convert.ToString(ConectaConModelo.Price);
+           
         }
         public void ListView()
         {
             var lista = FindViewById<ListView>(Resource.Id.LVProducts);
 
-           
-           
 
 
             datos.Add(ProductoCompleto);
+            //datos.Add(Convert.ToString(apoyoObjeto.apoyosServicios));
+            //datos.Add(ProductoCompleto);
 
             //lo que va a mostrar la vista listview
             lista.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, datos);

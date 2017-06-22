@@ -1,25 +1,46 @@
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\ShoppingCart.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\Java.Interop.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\Microsoft.CSharp.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\Mono.Android.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\mscorlib.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Core.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Xml.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Xml.Linq.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Runtime.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.ComponentModel.Composition.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Threading.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Collections.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Collections.Concurrent.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Reflection.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Diagnostics.Debug.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Linq.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Runtime.InteropServices.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Runtime.Extensions.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Reflection.Extensions.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\Mono.CSharp.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Net.Http.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.Runtime.Serialization.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\System.ServiceModel.Internals.dll
-C:\Users\alejo\Source\Repos\ShoppingCart\ShoppingCart\ShoppingCart\obj\Debug\android\assets\Mono.Security.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/ShoppingCart.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/Java.Interop.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/Microsoft.CSharp.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/Mono.Android.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/mscorlib.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Core.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.IO.Compression.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Net.Http.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Xml.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Xml.Linq.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/Newtonsoft.Json.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Runtime.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.ComponentModel.Composition.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Threading.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Collections.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Collections.Concurrent.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Reflection.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Diagnostics.Debug.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Linq.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Runtime.InteropServices.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Runtime.Extensions.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Reflection.Extensions.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/Mono.CSharp.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Runtime.Serialization.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.ServiceModel.Internals.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/Mono.Security.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Resources.ResourceManager.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.IO.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Runtime.Numerics.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Numerics.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Xml.XmlDocument.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Xml.XDocument.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Globalization.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Threading.Tasks.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Runtime.Serialization.Primitives.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.ComponentModel.TypeConverter.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Dynamic.Runtime.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Linq.Expressions.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Runtime.Serialization.Formatters.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.ObjectModel.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Text.RegularExpressions.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Xml.ReaderWriter.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Text.Encoding.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Reflection.Primitives.dll
+/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/obj/Debug/android/assets/System.Text.Encoding.Extensions.dll
