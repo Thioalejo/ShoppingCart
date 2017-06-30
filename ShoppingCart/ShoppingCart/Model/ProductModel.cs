@@ -18,9 +18,9 @@ namespace ShoppingCart.Model
     {
     
         public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string NameProperty = "")
+        public void OnPropertyChanged([CallerMemberName]string nameProperty = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(NameProperty));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameProperty));
         }
 
         private bool isBusy =false;

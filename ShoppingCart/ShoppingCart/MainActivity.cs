@@ -8,10 +8,11 @@ using System;
 using Android.Content.PM;
 using System.Net.Http;
 using Newtonsoft.Json;
+using Android.Content;
 
 namespace ShoppingCart
 {
-    [Activity(Label = "                 Carrito de Compras", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         private List<string> datos;
@@ -50,17 +51,50 @@ namespace ShoppingCart
             var btnModificar = FindViewById<Button>(Resource.Id.btnModificar);
             btnModificar.Click += BtnModificar_Click;
 
+            var btnConsultar = FindViewById<Button>(Resource.Id.btnConsultar);
+            btnConsultar.Click += btnConsultar_Click;        
             datos = new List<string>();
+        }
+
+        private void  btnConsultar_Click(object sender, EventArgs e)
+        {
+            ConsultarProductos();
+
+        }
+
+        public async void ConsultarProductos()
+        {
+			try
+            {
+				var list = await "http://10.215.152.24/api/Productos".GetRequest<List<Productos>>();
+
+                // TODO: Borrar este check
+				
+					foreach (var producto in list)
+					{
+                    ProductoCompleto = "Producto: " + producto. Nombre + " Precio $ " + producto.Precio;
+						//ProductoCompleto = Convert.ToString(user.Precio);∫∫
+						//System.Diagnostics.Debug.WriteLine(user.Nombre );
+						//System.Diagnostics.Debug.WriteLine(user.Precio);
+                        ListView();
+					}
+					
+				
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Se ha generado un error al consultar el servicio" + ex.Message);
+			}
+
         }
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
-            // TxtID = FindViewById<TextView>(Resource.Id.btnModificar);
 
             // TxtID = FindViewById<TextView>(Resource.Id.EditTextViewMostrarIDProducto);
-             TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-             TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-             TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
+            TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
+            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
+            TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
 
 
             ConectaConModelo.Name = TxtName.Text;
@@ -92,9 +126,9 @@ namespace ShoppingCart
 
         
 
-        private void BtnLimpiar_Click(object sender, System.EventArgs e)
+        private async void BtnLimpiar_Click(object sender, System.EventArgs e)
         {
-            ConsumirServicio();
+            //ConsumirServicio();
             TxtID = FindViewById<TextView>(Resource.Id.TextViewMostrarIDProducto);
             TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
             TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
@@ -104,7 +138,7 @@ namespace ShoppingCart
             TxtName.Text = "";
             TxtCdBarras.Text = "";
             TxtPrice.Text = "0";
-        }
+		}
 
         private void BtnGuardar_Click(object sender, System.EventArgs e)
         {
@@ -117,7 +151,7 @@ namespace ShoppingCart
             if(TxtName.Text == "" || TxtCdBarras.Text == "" || TxtPrice.Text == "")
             {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.SetMessage("Debe llenar todos los campos");
+                alertDialogBuilder.SetMessage(Resource.String.MissingFieldsError);
                 alertDialogBuilder.Show();
             }
             else
@@ -151,20 +185,8 @@ namespace ShoppingCart
             
         }
 
-        Apoyo apoyoObjeto;
-        public async void ConsumirServicio()
-        {
-            string url = "http://plataforma.promexico.gob.mx/sys/gateway.aspx?UID=f2ea359b-a03d-456b-a01a-0f8afab41344";
-            HttpClient httpClient = new HttpClient();
-
-            //descargar json y deseraliacion y mostrar en el lisview
-            string jsonResultado = await httpClient.GetStringAsync(url);
-
-            apoyoObjeto = JsonConvert.DeserializeObject<Apoyo>(jsonResultado);
-
-
-            //ListView();
-        }
+        Productos productoenbase = new Productos();
+     
         private void Lista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             TxtID = FindViewById<TextView>(Resource.Id.TextViewMostrarIDProducto);
@@ -173,10 +195,10 @@ namespace ShoppingCart
             TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
 
 
-            TxtID.Text = ConectaConModelo.Id;
-            TxtName.Text = ConectaConModelo.Name;
-            TxtCdBarras.Text = ConectaConModelo.CdBarras;
-            TxtPrice.Text = Convert.ToString(ConectaConModelo.Price);
+            TxtID.Text = productoenbase.ID.ToString();
+            TxtName.Text = productoenbase.Nombre;
+            TxtCdBarras.Text = productoenbase.Codigo.ToString();
+            TxtPrice.Text = Convert.ToString(productoenbase.Precio);
            
         }
         public void ListView()

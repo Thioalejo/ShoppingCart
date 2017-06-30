@@ -69,11 +69,14 @@ namespace ShoppingCart
 			// aapt resource value: 0x7f050009
 			public const int EditTextPrecioProducto = 2131034121;
 			
-			// aapt resource value: 0x7f05000e
-			public const int LVProducts = 2131034126;
+			// aapt resource value: 0x7f05000f
+			public const int LVProducts = 2131034127;
 			
 			// aapt resource value: 0x7f050003
 			public const int TextViewMostrarIDProducto = 2131034115;
+			
+			// aapt resource value: 0x7f05000e
+			public const int btnConsultar = 2131034126;
 			
 			// aapt resource value: 0x7f05000d
 			public const int btnEliminar = 2131034125;
@@ -139,6 +142,9 @@ namespace ShoppingCart
 			
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int MissingFieldsError = 2130968578;
 			
 			static String()
 			{

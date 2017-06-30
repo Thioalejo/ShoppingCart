@@ -31,37 +31,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewIdProducto"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
             <TextView
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/TextViewMostrarIDProducto"
-                android:hint="Aquí cargara ID" 
-                android:textSize="15dp"/>
+                android:hint="Aquí cargara ID"
+                android:textSize="15dp" />
             <TextView
                 android:text="Nombre producto:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewNameProduct"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
             <EditText
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/EditTextNombreProducto"
-                android:hint="Ingrese nombre" 
-                android:textSize="15dp"/>
+                android:hint="Ingrese nombre"
+                android:textSize="15dp" />
             <TextView
                 android:text="Codigo de barras:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewTitleCdBarras"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
             <EditText
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -69,14 +69,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EditTextCdBarras"
                 android:hint="Ingrese codigo del producto"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
             <TextView
                 android:text="Precio producto:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewTitlePrecioProducto"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
             <EditText
                 android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge"
@@ -84,8 +84,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EditTextPrecioProducto"
                 android:inputType="numberDecimal"
-                android:hint="Ingrese Valor" 
-                android:textSize="15dp"/>
+                android:hint="Ingrese Valor"
+                android:textSize="15dp" />
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_height="35.5dp">
@@ -110,6 +110,11 @@
             <Button
                 android:text="Eliminar"
                 android:id="@+id/btnEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="39.0dp" />
+            <Button
+                android:text="Consultar productos"
+                android:id="@+id/btnConsultar"
                 android:layout_width="wrap_content"
                 android:layout_height="39.0dp" />
             <TextView

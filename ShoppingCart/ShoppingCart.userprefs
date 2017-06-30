@@ -1,17 +1,20 @@
 ﻿<Properties StartupConfiguration="{937A2FAC-BF88-4F21-ABA4-4EBDB6DA5B3C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ShoppingCart/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ShoppingCart/Productos.cs">
     <Files>
-      <File FileName="ShoppingCart/MainActivity.cs" Line="164" Column="13" />
-      <File FileName="ShoppingCart/Apoyo.cs" Line="8" Column="5" />
+      <File FileName="ShoppingCart/Service/Client.cs" Line="10" Column="9" />
+      <File FileName="ShoppingCart/MainActivity.cs" Line="27" Column="27" />
+      <File FileName="ShoppingCart/Service/ComsumirSer.cs" Line="13" Column="1" />
+      <File FileName="ShoppingCart/Service/ProductService.cs" Line="38" Column="9" />
+      <File FileName="ShoppingCart/ViewModel/ProductViewModel.cs" Line="56" Column="14" />
+      <File FileName="ShoppingCart/Apoyo.cs" Line="19" Column="1" />
+      <File FileName="ShoppingCart/Productos.cs" Line="13" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/Areamovil/Documents/Carrito de compras/ShoppingCart/ShoppingCart/MainActivity.cs" relfile="ShoppingCart/MainActivity.cs" line="35" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.ShoppingCart PreferredExecutionTarget="Android.G7T7N16C30006880" />
+  <MonoDevelop.Ide.ItemProperties.ShoppingCart AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" />
 </Properties>

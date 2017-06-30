@@ -29,7 +29,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>PdbOnly</DebugType>
@@ -65,6 +65,9 @@
     <Compile Include="Service\ProductService.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
     <Compile Include="Apoyo.cs" />
+    <Compile Include="Service\ComsumirSer.cs" />
+    <Compile Include="Service\Client.cs" />
+    <Compile Include="Productos.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
