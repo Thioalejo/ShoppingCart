@@ -1,13 +1,11 @@
 ﻿<Properties StartupConfiguration="{937A2FAC-BF88-4F21-ABA4-4EBDB6DA5B3C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ShoppingCart/Productos.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ShoppingCart/Service/ComsumirSer.cs">
     <Files>
-      <File FileName="ShoppingCart/Service/Client.cs" Line="10" Column="9" />
-      <File FileName="ShoppingCart/MainActivity.cs" Line="27" Column="27" />
-      <File FileName="ShoppingCart/Service/ComsumirSer.cs" Line="13" Column="1" />
-      <File FileName="ShoppingCart/Service/ProductService.cs" Line="38" Column="9" />
-      <File FileName="ShoppingCart/ViewModel/ProductViewModel.cs" Line="56" Column="14" />
-      <File FileName="ShoppingCart/Apoyo.cs" Line="19" Column="1" />
-      <File FileName="ShoppingCart/Productos.cs" Line="13" Column="1" />
+      <File FileName="ShoppingCart/MainActivity.cs" Line="81" Column="51" />
+      <File FileName="ShoppingCart/Service/Client.cs" Line="47" Column="31" />
+      <File FileName="ShoppingCart/Productos.cs" Line="4" Column="20" />
+      <File FileName="ShoppingCart/GettingStarted.Xamarin" Line="1" Column="1" />
+      <File FileName="ShoppingCart/Service/ComsumirSer.cs" Line="20" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

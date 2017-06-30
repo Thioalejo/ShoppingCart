@@ -1,3 +1,131 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="Registrar Comercios"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="375.5dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textpro"
+        android:gravity="center"
+        android:layout_marginRight="240.0dp"
+        android:background="@android:color/holo_orange_light"
+        android:textColor="@android:color/black" />
+    <ScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView1">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1">
+            <TextView
+                android:text="ID comercio:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewIdComercio"
+                android:textSize="15dp" />
+            <TextView
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/TextViewMostrarIDComercio"
+                android:hint="Aquí cargara ID"
+                android:textSize="15dp" />
+            <TextView
+                android:text="Nombre comercio:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewNameProduct"
+                android:textSize="15dp" />
+            <EditText
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/EditTextNombreComercio"
+                android:hint="Ingrese nombre"
+                android:textSize="15dp" />
+            <TextView
+                android:text="Latitud:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewTitleCdBarras"
+                android:textSize="15dp" />
+            <EditText
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/EditTextLatitud"
+                android:hint="Ingrese latitud del comercio"
+                android:textSize="15dp" />
+            <TextView
+                android:text="Longitud:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewTitlePrecioLongitud"
+                android:textSize="15dp" />
+            <EditText
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/EditTextLongitud"
+                android:inputType="numberDecimal"
+                android:hint="Ingrese longitud del comercio"
+                android:textSize="15dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_height="35.5dp">
+                <Button
+                    android:text="Guardar"
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="80dp" />
+                <Button
+                    android:text="Modificar"
+                    android:id="@+id/btnModificar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp" />
+            </LinearLayout>
+            <Button
+                android:text="Limpiar"
+                android:id="@+id/btnLimpiar"
+                android:layout_width="wrap_content"
+                android:layout_height="37.5dp" />
+            <Button
+                android:text="Eliminar"
+                android:id="@+id/btnEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="39.0dp" />
+            <Button
+                android:text="Consultar comercios"
+                android:id="@+id/btnConsultar"
+                android:layout_width="wrap_content"
+                android:layout_height="39.0dp" />
+            <TextView
+                android:text="Comercios registrados"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="126.5dp"
+                android:layout_height="match_parent"
+                android:id="@+id/textpro"
+                android:gravity="center" />
+        </TableLayout>
+    </ScrollView>
+    <ListView
+        android:id="@+id/LVComercios"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

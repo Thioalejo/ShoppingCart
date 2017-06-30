@@ -68,6 +68,8 @@
     <Compile Include="Service\ComsumirSer.cs" />
     <Compile Include="Service\Client.cs" />
     <Compile Include="Productos.cs" />
+    <Compile Include="RegistroComercios.cs" />
+    <Compile Include="PaginaPrincipal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
@@ -79,6 +81,8 @@
     <AndroidResource Include="Resources\layout\Main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\RegistroComercios.axml" />
+    <AndroidResource Include="Resources\layout\PaginaPrincipal.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

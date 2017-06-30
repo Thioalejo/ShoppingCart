@@ -13,13 +13,13 @@ using Android.Widget;
 
 namespace ShoppingCart
 {
-    [Activity(Label = "RegistroComercios")]
+    [Activity(Label = "@string/ApplicationName")]
     public class RegistroComercios : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            SetContentView(Resource.Layout.RegistroComercios);
             // Create your application here
         }
     }
