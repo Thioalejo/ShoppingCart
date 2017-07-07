@@ -53,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/EditTextCdBarras"
                 android:hint="Ingrese codigo del producto"
+                android:inputType="numberDecimal"
                 android:textSize="15dp" />
             <TextView
                 android:text="Precio producto:"

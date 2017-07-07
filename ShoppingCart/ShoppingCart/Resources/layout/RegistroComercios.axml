@@ -24,21 +24,6 @@
             android:layout_height="fill_parent"
             android:stretchColumns="1">
             <TextView
-                android:text="ID comercio:"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textViewIdComercio"
-                android:textSize="15dp" />
-            <TextView
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/TextViewMostrarIDComercio"
-                android:hint="Aquí cargara ID"
-                android:textSize="15dp" />
-            <TextView
                 android:text="Nombre comercio:"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"
@@ -89,30 +74,30 @@
                 android:layout_height="35.5dp">
                 <Button
                     android:text="Guardar"
-                    android:id="@+id/btnGuardar"
+                    android:id="@+id/btnGuardarComercio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80dp" />
                 <Button
                     android:text="Modificar"
-                    android:id="@+id/btnModificar"
+                    android:id="@+id/btnModificarComercio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp" />
             </LinearLayout>
             <Button
                 android:text="Limpiar"
-                android:id="@+id/btnLimpiar"
+                android:id="@+id/btnLimpiarComercio"
                 android:layout_width="wrap_content"
                 android:layout_height="37.5dp" />
             <Button
                 android:text="Eliminar"
-                android:id="@+id/btnEliminar"
+                android:id="@+id/btnEliminarComercio"
                 android:layout_width="wrap_content"
                 android:layout_height="39.0dp" />
             <Button
                 android:text="Consultar comercios"
-                android:id="@+id/btnConsultar"
+                android:id="@+id/btnConsultarComercio"
                 android:layout_width="wrap_content"
                 android:layout_height="39.0dp" />
             <TextView

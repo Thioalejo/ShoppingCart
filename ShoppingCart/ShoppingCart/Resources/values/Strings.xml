@@ -3,4 +3,5 @@
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">ShoppingCart</string>
 	<string name="MissingFieldsError">Debe llenar todos los campos</string>
+	<string name="MissingErrorConsultadoEnviandoDatosAlservicio">Hubo un error al guardar los datos…</string>
 </resources>

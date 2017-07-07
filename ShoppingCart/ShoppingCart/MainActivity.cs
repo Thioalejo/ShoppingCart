@@ -3,13 +3,13 @@ using Android.Widget;
 using Android.OS;
 using System.Collections.Generic;
 using ShoppingCart.Service;
-using ShoppingCart.ViewModel;
+
 using System;
 using Android.Content.PM;
 using System.Net.Http;
 using Newtonsoft.Json;
 using Android.Content;
-using ShoppingCart.Model;
+
 using System.Threading.Tasks;
 using System.Text;
 
@@ -19,17 +19,23 @@ namespace ShoppingCart
     public class MainActivity : Activity
     {
         private List<string> datos;
-        TextView TxtID;
-        TextView TxtName;
+        //TextView TxtID;
+        EditText TxtName;
         EditText TxtCdBarras;
-        TextView TxtPrice;
-        //esto podria ser un servicio en azure o para consumir servicio rest, en este caso seria local
-        ProductService servicio = new ProductService();
-        //recordar que no se debe conectar directamente con el model, para eso se usa el view model que hace este proceso
-        // por tanto yo desde la vista me comunico con el viewmodel no el modelo y el view model hace el mapeo de datos
-        ProductViewModel ConectaConModelo = new ProductViewModel();
-        HttpClient client = new HttpClient();
-        string ProductoCompleto;
+        EditText TxtPrice;
+		string URLProductos = "http://10.215.152.29/Compras2/api/Productos";
+        static int IDProducto;
+		string NOMBRE;
+		int CDBARRAS;
+		double PRECIO;
+
+		//esto podria ser un servicio en azure o para consumir servicio rest, en este caso seria local
+		//ProductService servicio = new ProductService();
+		//recordar que no se debe conectar directamente con el model, para eso se usa el view model que hace este proceso
+		// por tanto yo desde la vista me comunico con el viewmodel no el modelo y el view model hace el mapeo de datos
+
+		HttpClient client = new HttpClient();
+		string ProductoCompleto;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -62,171 +68,71 @@ namespace ShoppingCart
 
         private async void  btnConsultar_Click(object sender, EventArgs e)
         {
-           // ConsultarProductos();
             await ObtenerProductos();
         }
 
+		
 
-		// Get
+		// Get ycrearLista en listview
 		public async Task<IEnumerable<Productos>> ObtenerProductos()
 		{
 			
-			string result = await client.GetStringAsync("http://10.215.152.16/api/Productos");
+            string result = await client.GetStringAsync("http://10.215.152.29/Compras2/api/Productos");
 			var Resultado = JsonConvert.DeserializeObject<IEnumerable<Productos>>(result);
 
 
 
             foreach (var Prodctos in Resultado)
 			{
-                ProductoCompleto = "Producto: " + Prodctos.Nombre  + " - Precio: $ " + Prodctos.Precio;
+                ProductoCompleto = "ID:" + Prodctos.ID + "Producto: " + Prodctos.Nombre  + " - Precio: $ " + Prodctos.Precio;
 				
 				ListView();
 			}
             return Resultado;
 		}
 
-		
-
-        //public async void ConsultarProductos()
-        //{
-
-           // HttpClient client = new HttpClient();
-            //string text = await client.GetStringAsync("");
-
-            //Productos prod = JsonConvert.DeserializeObject<Productos>(text);
-
-		//	try
-          //  {
-			//	var list = await "http://10.215.152.16/api/Productos".GetRequest<List<Productos>>();
-
-              //  // TODO: Borrar este check
-				
-				//	foreach (var producto in list)
-					//{
-                  //      ProductoCompleto = "Producto: " + producto. Nombre + " Precio $ " + producto.Precio;
-						//ProductoCompleto = Convert.ToString(user.Precio);∫∫
-						//System.Diagnostics.Debug.WriteLine(user.Nombre );
-						//System.Diagnostics.Debug.WriteLine(user.Precio);
-                      //  ListView();
-					//}
-					
-				
-            //}
-            //catch (Exception ex)
-            //{
-            //    System.Diagnostics.Debug.WriteLine("Se ha generado un error al consultar el servicio" + ex.Message);
-			//}
-
-        //}
-
-       
 
 
 
-        private void BtnModificar_Click(object sender, EventArgs e)
-        {
+		private async void BtnGuardar_Click(object sender, System.EventArgs e)
+		{
+			TxtName = FindViewById<EditText>(Resource.Id.EditTextNombreProducto);
+			TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
+			TxtPrice = FindViewById<EditText>(Resource.Id.EditTextPrecioProducto);
 
-            //TxtID = FindViewById<EditText>(Resource.Id.EditTextViewMostrarIDProducto);
-            TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-            TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
+			if (TxtName.Text == "" || TxtCdBarras.Text == "" || TxtPrice.Text == "")
+			{
+				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+				alertDialogBuilder.SetMessage(Resource.String.MissingErrorConsultadoEnviandoDatosAlservicio);
+				alertDialogBuilder.Show();
+			}
 
-
-            ConectaConModelo.Name = TxtName.Text;
-            ConectaConModelo.CdBarras = TxtCdBarras.Text;
-            ConectaConModelo.Price = Convert.ToDecimal(TxtPrice.Text);
-
-
-            servicio.Modificar(ConectaConModelo);
-        }
-
-        private void BtnEliminar_Click(object sender, System.EventArgs e)
-        {
-            TxtID = FindViewById<EditText>(Resource.Id.btnEliminar);
-            servicio.Eliminar(ConectaConModelo.Id);
-            //var TxtID = FindViewById<TextView>(Resource.Id.EditTextViewMostrarIDProducto);
-            TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-            TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
+			else
+			{
+				NOMBRE = TxtName.Text;
+				CDBARRAS = Convert.ToInt32(TxtCdBarras.Text);
+				PRECIO = Convert.ToDouble(TxtPrice.Text);
+				await Agregar(NOMBRE, CDBARRAS, PRECIO, "Prueba");
 
 
-            ConectaConModelo.Id = "";
-            ConectaConModelo.Name = TxtName.Text = "";
-            ConectaConModelo.CdBarras = TxtCdBarras.Text = "";
-            ConectaConModelo.Price = 0;
-            TxtPrice.Text = "";
+		   }
 
-            
-        }
-
-        
-
-        private async void BtnLimpiar_Click(object sender, System.EventArgs e)
-        {
-            //ConsumirServicio();
-
-            TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-            TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
-
-            TxtID.Text = "";
-            TxtName.Text = "";
-            TxtCdBarras.Text = "";
-            TxtPrice.Text = "0";
-		}
-
-        private async void BtnGuardar_Click(object sender, System.EventArgs e)
-        {
-            //TxtID = FindViewById<TextView>(Resource.Id.TextViewMostrarIDProducto);
-            TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-            TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
-
-           
-            if(TxtName.Text == "" || TxtCdBarras.Text == "" || TxtPrice.Text == "")
-            {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.SetMessage(Resource.String.MissingFieldsError);
-                alertDialogBuilder.Show();
-            }
-            else
-            {
-                string NOMBRE = TxtName.Text;
-                int CDBARRAS = Convert.ToInt32(TxtCdBarras.Text);
-                double PRECIO = Convert.ToDouble(TxtPrice.Text);
-
-
-                await Agregar(NOMBRE,CDBARRAS,PRECIO,"Prueba");
-            }
-           
-            try
-            {
-                ConectaConModelo.Price = Convert.ToDecimal(TxtPrice.Text);
-            }
-            catch (Exception)
-            {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                alertDialogBuilder.SetMessage("Debe ingresar un numero valido en el precio del producto");
-                alertDialogBuilder.Show();
-            }
-            
-            
-        }
-
-        //Para POST Guadar registro
-        public static async Task<Productos> Agregar(string nombre, int codigo, double precio, string local)
+		}		//Para POST Guadar registro
+		public static async Task<Productos> Agregar(string nombre, int codigo, double precio, string local)
 		{
 			Productos producto = new Productos()
 			{
+
 				//ID = id,
+
 				Nombre = nombre,
 				Codigo = codigo,
 				Precio = precio,
-                Local = local,
+				Local = local,
 			};
 
-            HttpClient client = new HttpClient();
-			var response = await client.PostAsync("http://10.215.152.16/api/Productos", new StringContent(JsonConvert.SerializeObject(producto),
+			HttpClient client = new HttpClient();
+			var response = await client.PostAsync("http://10.215.152.29/Compras2/api/Productos/", new StringContent(JsonConvert.SerializeObject(producto),
 																										 Encoding.UTF8, "application/json"));
 
 			return JsonConvert.DeserializeObject<Productos>(await response.Content.ReadAsStringAsync());
@@ -234,21 +140,137 @@ namespace ShoppingCart
 
 
 
-        Productos productoenbase = new Productos();
-     
-        private void Lista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        private async void BtnModificar_Click(object sender, EventArgs e)
         {
-           
-            TxtName = FindViewById<TextView>(Resource.Id.EditTextNombreProducto);
-            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
-            TxtPrice = FindViewById<TextView>(Resource.Id.EditTextPrecioProducto);
 
-            //client.GetStringAsync()
-            //TxtID.Text = productoenbase.ID.ToString();
-            TxtName.Text = productoenbase.Nombre;
-            TxtCdBarras.Text = productoenbase.Codigo.ToString();
-            TxtPrice.Text = Convert.ToString(productoenbase.Precio);
+			TxtName = FindViewById<EditText>(Resource.Id.EditTextNombreProducto);
+			TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
+			TxtPrice = FindViewById<EditText>(Resource.Id.EditTextPrecioProducto);
+
+			if (TxtName.Text == "" || TxtCdBarras.Text == "" || TxtPrice.Text == "")
+			{
+				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+				alertDialogBuilder.SetMessage(Resource.String.MissingErrorConsultadoEnviandoDatosAlservicio);
+				alertDialogBuilder.Show();
+			}
+
+			else
+			{
+				NOMBRE = TxtName.Text;
+				CDBARRAS = Convert.ToInt32(TxtCdBarras.Text);
+				PRECIO = Convert.ToDouble(TxtPrice.Text);
+                await Modificar(NOMBRE, CDBARRAS, PRECIO, "Modificado");
+
+
+
+
+			}
+        }
+
+       
+
+		public static async Task<Productos> Modificar(string nombre, int codigo, double precio, string local)
+		{
+            
+			Productos producto = new Productos()
+			{
+                
+				ID=IDProducto,
+			    Nombre = nombre,
+				Codigo = codigo,
+				Precio = precio,
+				Local = local,
+			};
+
+			HttpClient client = new HttpClient();
+			var response = await client.PutAsync("http://10.215.152.29/Compras2/api/Productos/"+ IDProducto, new StringContent(JsonConvert.SerializeObject(producto),
+																										 Encoding.UTF8, "application/json"));
+			Console.WriteLine( "Respuesta MOdificar "+response);
+            return JsonConvert.DeserializeObject<Productos>(await response.Content.ReadAsStringAsync());
+		}
+
+		private async void BtnEliminar_Click(object sender, System.EventArgs e)
+        {
+            await Delete();
+            //servicio.Eliminar(ConectaConModelo.Id);
+            //var TxtID = FindViewById<TextView>(Resource.Id.EditTextViewMostrarIDProducto);
+            TxtName = FindViewById<EditText>(Resource.Id.EditTextNombreProducto);
+            TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
+            TxtPrice = FindViewById<EditText>(Resource.Id.EditTextPrecioProducto);
+
+
+			TxtName.Text = "";
+			TxtCdBarras.Text = "";
+            TxtPrice.Text = "0";
+
+
+        }
+
+
+		public static async Task Delete()
+			{
+
+				
+					
+				HttpClient client = new HttpClient();
+				var response = await client.DeleteAsync("http://10.215.152.29/Compras2/api/Productos/" + IDProducto);
+
+				Console.WriteLine(response);
+				//return JsonConvert.DeserializeObject<Productos>(await response.Content.ReadAsStringAsync());
+			}
+
+
+        private  void BtnLimpiar_Click(object sender, System.EventArgs e)
+        {
+            //ConsumirServicio();
+
+
            
+            TxtName.Text = "";
+            TxtCdBarras.Text = "";
+            TxtPrice.Text = "0";
+		}
+
+
+        public async Task<IEnumerable<Productos>> MostrarProductoEnCampos(string Cadena)
+		{
+			TxtName = FindViewById<EditText>(Resource.Id.EditTextNombreProducto);
+			TxtCdBarras = FindViewById<EditText>(Resource.Id.EditTextCdBarras);
+			TxtPrice = FindViewById<EditText>(Resource.Id.EditTextPrecioProducto);
+			string result = await client.GetStringAsync(URLProductos);
+			var Resultado = JsonConvert.DeserializeObject<IEnumerable<Productos>>(result);
+
+
+
+
+			foreach (var Prodctos in Resultado)
+			{
+                if (Cadena.Contains(Prodctos.ID.ToString()))
+				{
+                    IDProducto = Prodctos.ID;
+					TxtName.Text = Prodctos.Nombre;
+                    TxtCdBarras.Text = Convert.ToString(Prodctos.Codigo);
+                    TxtPrice.Text = Convert.ToString(Prodctos.Precio);
+					Prodctos.Local = "Defecto";
+					//ProductoCompleto = "Producto: " + Prodctos.Nombre + " - Precio: $ " + Prodctos.Precio;
+					return Resultado;
+				}
+				//ListView();
+			}
+			return Resultado;
+		}
+        //Productos productoenbase = new Productos();
+     
+        private async void Lista_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var lista = FindViewById<ListView>(Resource.Id.LVProducts);
+            string str = lista.GetItemAtPosition(e.Position).ToString();
+
+            await MostrarProductoEnCampos(str);
+
+
+
+
         }
         public void ListView()
         {

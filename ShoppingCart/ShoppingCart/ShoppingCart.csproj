@@ -59,13 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Model\ProductModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\ProductService.cs" />
-    <Compile Include="ViewModel\ProductViewModel.cs" />
     <Compile Include="Apoyo.cs" />
-    <Compile Include="Service\ComsumirSer.cs" />
     <Compile Include="Service\Client.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="RegistroComercios.cs" />
